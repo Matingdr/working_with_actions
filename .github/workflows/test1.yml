@@ -3,12 +3,17 @@ name: learn-github-actions
 on: [push]
 
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
+  Using_python:
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Setup Python
+        uses: actions/setup-python@v3.1.2
         with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+          python-version: 
+            3.6
+          cache: 
+            pip install matplotlib
+          architecture: 
+            x64
+          
